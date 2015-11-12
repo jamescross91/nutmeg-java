@@ -5,6 +5,8 @@ import io.jamescross.rest.bytes.ImageConsumer;
 import io.jamescross.rest.json.FactConsumer;
 import io.jamescross.rest.xml.CategoryConsumer;
 
+import java.util.List;
+
 /**
  * Created by jamescross91 on 12/11/2015.
  */
@@ -32,7 +34,8 @@ public class Main {
     }
 
     private static void categoryOption() {
-        System.out.println(new CategoryConsumer().consumeResource("http://thecatapi.com/api/categories/list"));
+        List<String> categories = new CategoryConsumer().consumeResource("http://thecatapi.com/api/categories/list");
+        categories.stream().forEach(category -> System.out.println(category));
     }
 
     private static void factOption() {

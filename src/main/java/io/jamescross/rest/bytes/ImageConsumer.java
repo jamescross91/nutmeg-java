@@ -18,7 +18,7 @@ public class ImageConsumer implements ResourceConsumer {
     public String consumeResource(String resourcePath) {
         String tempPath = "";
         try {
-            File temp = File.createTempFile("tempfile", ".jpg");
+            File temp = File.createTempFile("tempfile", "");
             tempPath = temp.toString();
             InputStream inputStream = Unirest.get(resourcePath).asBinary().getBody();
             FileOutputStream fileOutputStream = new FileOutputStream(temp);
