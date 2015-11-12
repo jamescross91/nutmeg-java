@@ -1,6 +1,6 @@
 package io.jamescross;
 
-import io.jamescross.rest.xml.CategoryConsumer;
+import io.jamescross.rest.bytes.ImageConsumer;
 
 /**
  * Created by jamescross91 on 12/11/2015.
@@ -17,7 +17,7 @@ public class Main {
 //            e.printStackTrace();
 //        }
 
-        new CategoryConsumer().consumeResource("http://thecatapi.com/api/categories/list");
-
+        //new CategoryConsumer().consumeResource("http://thecatapi.com/api/categories/list");
+        System.out.println(new ImageConsumer().consumeResource("http://thecatapi.com/api/images/get"));
     }
 }
