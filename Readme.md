@@ -1,4 +1,4 @@
-###utmeg Javatest
+###Nutmeg Javatest
 
 ###The aim
 Please write a Java command line utility and submit it as a git repository, e.g. a link to a github repo.
