@@ -3,7 +3,6 @@ package io.jamescross.rest.xml;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import io.jamescross.model.categories.Categories;
 import io.jamescross.model.categories.Category;
 import io.jamescross.model.categories.Response;
 import io.jamescross.rest.ResourceConsumer;
@@ -14,7 +13,6 @@ import javax.xml.bind.Unmarshaller;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -31,10 +29,8 @@ public class CategoryConsumer implements ResourceConsumer {
             Response response = getResponse(resourcePath);
             List<Category> categoryElements = response.getData().getCategories().getCategoryList();
             //Map each category into only its name - which is all we are interested in
-            categories.addAll(categoryElements.stream().map(category -> category.getName()).collect(toList()));
-        } catch (UnirestException e) {
-            e.printStackTrace();
-        } catch (JAXBException e) {
+            categories.addAll(categoryElements.stream().map(Category::getName).collect(toList()));
+        } catch (UnirestException | JAXBException e) {
             e.printStackTrace();
         }
 
