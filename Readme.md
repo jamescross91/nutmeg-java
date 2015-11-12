@@ -51,3 +51,8 @@ java -jar target/nutmeg-java-1.0-jar-with-dependencies.jar categories
 ```
 java -jar target/nutmeg-java-1.0-jar-with-dependencies.jar fact
 ```
+
+###Enhancements
+* Mock out source systems so the tests dont rely on them - or refactor the logic out if it becomes more complex so it can be tested in isolation.  I didn't for this axercise as there is so little logic going on I didnt feel it was worth the extra structure.  However, we could add abstract classes for Binary and String consumers which the File and Fact/Category consumers extend from respectively.
+* Write the tests first - I should have done this and I didnt, which was naughty of me!
+* If we want to get really catty we could start caching responses locally, and if we scale, centrally (eg Redis).

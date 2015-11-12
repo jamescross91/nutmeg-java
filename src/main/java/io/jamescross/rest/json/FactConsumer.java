@@ -8,8 +8,6 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import io.jamescross.model.Fact;
 import io.jamescross.rest.ResourceConsumer;
 
-import java.io.FileNotFoundException;
-
 /**
  * Created by jamescross91 on 12/11/2015.
  */
