@@ -15,8 +15,8 @@ public class ImageConsumerTest {
     public void testConsumeFactsValid() {
         String filePath = new ImageConsumer().consumeResource(Endpoints.FILE_RESOURCE_PATH);
         assertTrue(filePath.length() > 0);
-        assertTrue(new File(filePath).exists());
+        File file = new File(filePath);
+        assertTrue(file.exists());
+        assertTrue(file.length() != 0);
     }
-
-
 }
