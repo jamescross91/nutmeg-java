@@ -51,7 +51,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>Bootstrap</mainClass>
+                            <mainClass>io.jamescross.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

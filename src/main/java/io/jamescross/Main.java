@@ -15,7 +15,7 @@ public class Main {
             System.out.println("Expecting exactly 1 argument: file, categories or fact.  Defaulting to file.");
             fileOption();
         } else {
-            switch(args[1]) {
+            switch(args[0]) {
                 case "file": fileOption();
                     break;
                 case "categories": categoryOption();
@@ -37,6 +37,6 @@ public class Main {
 
     private static void factOption() {
         Fact fact = new FactConsumer().consumeResource("http://catfacts-api.appspot.com/api/facts");
-        System.out.println(fact.getFacts());
+        fact.getFacts().stream().forEach(factString -> System.out.println(factString));
     }
 }
